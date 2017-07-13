@@ -22,25 +22,20 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
-				<p id='heading'><center>DB MENTOR SELECTOR</center></p>
 			</h3>
 			<nav class="navbar navbar-default navbar-static-top" role="navigation">
 				<div class="navbar-header">
 					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> 
 					<!--<img src='https://www.americanbankingnews.com/logos/deutsche-bank-logo.png' style = "width: 220px; height:50px;"></img> -->
 					<img src='dbGuru.jpg' style = "width: 80px; height:50px;"></img>
 				</div>
 				
-				<div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-					<form class="navbar-form navbar-left" name='form' method='post' action="search.php">
-						<div class="form-group">
-							<input type="text" id ='name' name = "name" class="form-control" style = "width:500px;"/>
-							<button type="submit" name= "submit" class="btn btn-default" >Search</button>
-						</div>
-					</form>
+				<form class="navbar-form navbar-left" name='form' method='post' action="search.php">
+					<div class="form-group">
+						<input type="text" id ='name' name = "name" class="form-control" style = "width:500px;"/>
+						<button type="submit" name= "submit" class="btn btn-default" >Search</button>
+					</div>
+				</form>
 					<?PHP
 					$pattern =  '/^[0-9A-Za-zÁ-Úá-úàÀÜü]+$/';//integers & letters
 					if (preg_match($pattern, $name) == 1){
@@ -48,8 +43,6 @@
 					} else {
 						//reload form with error message
 					}?>
-
-				</div>
 
 			</nav>
 			
