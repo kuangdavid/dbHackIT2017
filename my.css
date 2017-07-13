@@ -1,0 +1,38 @@
+#heading{
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 2px #CCCCCC;
+	font-size:56px;
+}
+.margin_right { width: 65%;
+		float: right;
+		height: 90%;   
+	   padding-bottom:96px;
+	   padding-top:4px;
+	   background-color:#ffffe6 }
+		   
+.margin_left { float: left;
+	  width:35%;
+	  height: 90%;   
+	  padding-bottom:100px;
+	  background-color:white }
+		  
+.bottom { width: 100%;
+		float: bottom;  
+	   padding-bottom:10px;
+	   padding-top:4px;
+	   background-color: #ffffcc; }
+.search_bar{
+	float:center;
+    width: 400px; 
+	height: 50px; 
+	padding: 1px;
+	border-radius: 25px;
+	}
+#submit{
+	float:center;
+    width: 200px; 
+	height: 50px; 
+	padding: 1px;
+	border-radius: 10px;
+	
+}
