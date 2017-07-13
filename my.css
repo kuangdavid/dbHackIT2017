@@ -34,5 +34,7 @@
 	height: 50px; 
 	padding: 1px;
 	border-radius: 10px;
-	
 }
+#map {
+        height: 100%;
+      }
