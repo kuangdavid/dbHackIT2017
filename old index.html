@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="my.css">
+  <head>
+ 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <center><title>DB Mentor Selector</title></center>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>
+				<p id='heading'><center>DB MENTOR SELECTOR</center></p>
+			</h3>
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> 
+					<!--<img src='https://www.americanbankingnews.com/logos/deutsche-bank-logo.png' style = "width: 220px; height:50px;"></img> -->
+					<img src='dbGuru.jpg' style = "width: 80px; height:50px;"></img>
+				</div>
+				
+				<div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+					<form class="navbar-form navbar-left" >
+						<div class="form-group">
+							<input type="text" id ='textbox' class="form-control" style = "width:500px;"/>
+							<button type="submit" class="btn btn-default" onclick="redirect()">Search</button>
+						</div>
+					</form>
+					<?php Session["strKey"] = ""; ?>
+				</div>
+
+			</nav>
+			
+			<div class="row">
+				<div class="col-md-4">
+		
+					<p>
+					<br/>Are you a growing business in search of support and guidance from an experienced business professional? If so, use our search engine to access a list of quality-assured mentoring organisations in your area that specialise in helping businesses at your stage of development.
+					</p>
+				    
+					<p><button onclick="geoFindMe()">Find Employees Near Me</button></p>
+					<div id="out"></div>
+					<script>
+					  function geoFindMe() {
+						  var output = document.getElementById("out");
+
+						  if (!navigator.geolocation){
+							output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+							return;
+						  }
+
+						  function success(position) {
+							var latitude  = position.coords.latitude;
+							var longitude = position.coords.longitude;
+
+
+							var img = new Image();
+							img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+							output.appendChild(img);
+						  }
+
+						  function error() {
+							output.innerHTML = "Unable to retrieve your location";
+						  }
+
+						  output.innerHTML = "<p>Locating…</p>";
+
+						  navigator.geolocation.getCurrentPosition(success, error);
+						}
+					</script>
+				</div>
+				
+				<div class="col-md-4">
+					<h3>
+					<CENTER>
+						TOP MENTORS
+					</CENTER>
+					</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>
+									#
+								</th>
+								<th>
+									Name
+								</th>
+								<th>
+									Specialty
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									name1
+								</td>
+								<td>
+									Mathematics
+								</td>
+							</tr>
+							<tr class="active">
+								<td>
+									2
+								</td>
+								<td>
+									name 2
+								</td>
+								<td>
+									System Analysts
+								</td>
+							</tr>
+							<tr class="success">
+								<td>
+									3
+								</td>
+								<td>
+									name 3
+								</td>
+								<td>
+									Engineering
+								</td>
+							</tr>
+							<tr class="warning">
+								<td>
+									4
+								</td>
+								<td>
+									name 4
+								</td>
+								<td>
+									Structural Design
+								</td>
+							</tr>
+							<tr class="danger">
+								<td>
+									5
+								</td>
+								<td>
+									name 5
+								</td>
+								<td>
+									Spanish
+								</td>
+							</tr>
+						</tbody>
+					</table><CENTER><img alt="DB Images" src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/1345A/production/_91383987_mediaitem91383986.jpg" style ="width: 400px; height:200px;"></CENTER>
+				</div>
+				<div class="col-md-4">
+					<dl>
+						<dt>
+							What Can We Offer You ?
+						</dt>
+						<dd>
+							We allow all our DB employees and undergraduates to gain as much experience by allowing them to learn from each other.
+						</dd>
+						<dt>
+							Why we Created the web page? 
+						</dt>
+						<dd>
+							The Deutsche Bank struggles to help their employees through other bases othe
+						</dd>
+						<dd>
+							Donec id elit non mi porta gravida at eget metus.
+						</dd>
+						<dt>
+							Malesuada porta
+						</dt>
+						<dd>
+							Etiam porta sem malesuada magna mollis euismod.
+						</dd>
+						<dt>
+							Felis euismod semper eget lacinia
+						</dt>
+						<dd>
+							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						</dd>
+					</dl><img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-thumbnail">
+				</div>
+			</div> 
+			<address>
+				 <strong>Deutsche Bank</strong> <abbr title="Phone">P:</abbr> 020 7545 8000
+			</address>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
