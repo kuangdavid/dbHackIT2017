@@ -2,13 +2,25 @@
 <html>
 <head>
 <style>
+.photo {
+	background-image:url("http://gd.intranet.db.com/perl/photo?mail=junaid.mohammed@db.com");
+	background-position: center;
+	background-size: 150%;
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	border-radius: 20px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
 table, td, th {
-    border: 5px solid black;
     padding: 5px;
 }
 
@@ -48,9 +60,11 @@ echo "<table>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>" . $row['FirstName'] ." ". $row['LastName'] . "</td>";
-    echo "</tr>";
-}
+    echo "<td><div class='photo' style='background-image:url(http://gd.intranet.db.com/perl/photo?mail=" . $row['email'] . ");'></div>" . $row['FirstName']
+." ". $row['LastName'] ."</td>";   
+	echo "<td>" .$row['email']."</td>";                                                                                                  
+    echo "</tr>";                                                                                                                                         
+}  
 echo "</table>";
 mysqli_close($con);
 ?>

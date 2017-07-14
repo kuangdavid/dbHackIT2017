@@ -1,6 +1,3 @@
-
-
-
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="my.css">
   <head>
@@ -25,34 +22,30 @@
 			$name = $_POST['name'];
 		}
 		?>
+		
 
 
 
-
-		<div class="container-fluid">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-default navbar-static-top" role="navigation">
-				<div class="navbar-left">
-					 
-					 
-					<!-- <img src='https://www.americanbankingnews.com/logos/deutsche-bank-logo.png' style = "width: 220px; height:50px;"></img> -->
-					<img src='logo.png' style = "width: 50px; height:50px; float:left;" ></img>
-					<img src='dbGuru.png' style = "width: 85px; height:50px; " ></img>
-					
-
-					
-				</div>
+	<div class="col-md-12" style="margin-top: 30px;">
+		<div class="navbar-left">
+			<img src='logo.png' style = "width: 50px; height:50px; margin-left: 30px; margin-bottom: 10px;" ></img>
+		</div>
+		<div class="navbar-right">
+			<img src='dbGuru.png' style = "width: 85px; height:50px; margin-right: 30px; margin-bottom: 10px;" ></img>
+		</div>
+	</div>
+		<div class="col-md-12" ">
+			
 				<center>
 				<form class="navbar-form navbar-center" name='form' method='post' action="search.php">
 					<div class="navbar-center">
-					
-					
-					
-						<input "type="text" onkeyup="showUser(this.value)" id ='name' name = "name" class="form-control" placeholder='<?php echo $name?>' style = "width:500px;"/>
-					
-					
-						<button type="submit" name= "submit" class="btn btn-default" >Search</button>
+						<input "type="text" onkeyup="showUser(this.value)" id ='name' name = "name" class="form-control" value='<?php echo $name?>' style = "width:500px;"/>
+						<select class = "btn btn-default" style="padding:5px;">
+						<option value="Skill" onselect="Skill()" >Skill</option>
+						<option value="Name" onselect="Name()">Name</option>
+						</select>
 					</div>
 					
 				</form>
@@ -65,14 +58,11 @@
 					} else {
 						//reload form with error message
 					}?>
-			</nav>
 		</div>
-		
-		
-		
-		
-		
 	</div>
+	
+	
+	
 	
 <script>
 function showUser(str) {
@@ -96,8 +86,15 @@ function showUser(str) {
         xmlhttp.send();
     }
 }
+
 </script>	
 
+
+
+
+<script>
+	showUser('<?Php echo $name?>');
+</script>
 	
 	
 	
@@ -105,7 +102,7 @@ function showUser(str) {
 	
 	
 	<div class="row">
-		<div class="col-md-8 result" id='txtHint'>
+		<div class="col-md-8 result" id='txtHint' style="margin-top: 3%">
 		
 		
 		
@@ -113,7 +110,8 @@ function showUser(str) {
 		
 		</div>
 		<div class="col-md-4">
-		
+		<br/>
+		<!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="37340/"></script> <!-- end feedwind code -->
 		
 		
 		
