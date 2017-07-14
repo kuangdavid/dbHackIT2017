@@ -18,21 +18,18 @@
   </head>
   <body >
 
-    <div class="container-fluid">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-
-			<nav class="navbar navbar-default navbar-static-top" role="navigation">
-				<div class="navbar-left">
-					 
-					 
-					<!-- <img src='https://www.americanbankingnews.com/logos/deutsche-bank-logo.png' style = "width: 220px; height:50px;"></img> -->
-					<img src='logo.png' style = "width: 50px; height:50px; float:left;" ></img>
-					<img src='dbGuru.png' style = "width: 85px; height:50px; " ></img>
-					
-
-					
-				</div>
+	<div class="col-md-12" style="margin-top: 30px;">
+		<div class="navbar-left">
+			<img src='logo.png' style = "width: 50px; height:50px; margin-left: 30px; margin-bottom: 10px;" ></img>
+		</div>
+		<div class="navbar-right">
+			<img src='dbGuru.png' style = "width: 85px; height:50px; margin-right: 30px; margin-bottom: 10px;" ></img>
+		</div>
+	</div>
+		<div class="col-md-12" ">
+			
 				<center>
 				<form class="navbar-form navbar-center" name='form' method='post' action="search.php">
 					<div class="navbar-center">
@@ -50,52 +47,13 @@
 					} else {
 						//reload form with error message
 					}?>
-			</nav>
-			
-			<div class="row">
-				<div class="col-md-4">
-		
-					<p>
-					<br/>Are you a growing business in search of support and guidance from an experienced business professional? If so, use our search engine to access a list of quality-assured mentoring organisations in your area that specialise in helping businesses at your stage of development.
-					</p>
-				    
-					<p><button onclick="geoFindMe()">Find Employees Near Me</button></p>
-					<div id="out"></div>
-					<script>
-					  function geoFindMe() {
-						  var output = document.getElementById("out");
-
-						  if (!navigator.geolocation){
-							output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-							return;
-						  }
-
-						  function success(position) {
-							var latitude  = position.coords.latitude;
-							var longitude = position.coords.longitude;
-
-
-							var img = new Image();
-							img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-							output.appendChild(img);
-						  }
-
-						  function error() {
-							output.innerHTML = "Unable to retrieve your location";
-						  }
-
-						  output.innerHTML = "<p>Locating…</p>";
-
-						  navigator.geolocation.getCurrentPosition(success, error);
-						}
-					</script>
-				</div>
-				
-				<div class="col-md-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6" style="width: 40%; height:100% ; margin-left: 8%;margin-bottom: 8%;">
 					<h3>
 					<CENTER>
-						TOP MENTORS
+						TOP ENDORSERS
 					</CENTER>
 					</h3>
 					<table class="table">
@@ -105,7 +63,7 @@
 									#
 								</th>
 								<th>
-									Name
+									Steve
 								</th>
 								<th>
 									Specialty
@@ -118,7 +76,7 @@
 									1
 								</td>
 								<td>
-									name1
+									Sarah
 								</td>
 								<td>
 									Mathematics
@@ -129,7 +87,7 @@
 									2
 								</td>
 								<td>
-									name 2
+									Adam
 								</td>
 								<td>
 									System Analysts
@@ -140,7 +98,7 @@
 									3
 								</td>
 								<td>
-									name 3
+									Raul
 								</td>
 								<td>
 									Engineering
@@ -151,7 +109,7 @@
 									4
 								</td>
 								<td>
-									name 4
+									David
 								</td>
 								<td>
 									Structural Design
@@ -162,51 +120,39 @@
 									5
 								</td>
 								<td>
-									name 5
+									Dhiren
 								</td>
 								<td>
 									Spanish
 								</td>
 							</tr>
 						</tbody>
-					</table><CENTER><img alt="DB Images" src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/1345A/production/_91383987_mediaitem91383986.jpg" style ="width: 100%; height:20%;"></CENTER>
-				</div>
-				<div class="col-md-4">
-					<dl>
-						<dt>
-							What Can We Offer You ?
-						</dt>
-						<dd>
-							We allow all our DB employees and undergraduates to gain as much experience by allowing them to learn from each other.
-						</dd>
-						<dt>
-							Why we Created the web page? 
-						</dt>
-						<dd>
-							The Deutsche Bank struggles to help their employees through other bases othe
-						</dd>
-						<dd>
-							Donec id elit non mi porta gravida at eget metus.
-						</dd>
-						<dt>
-							Malesuada porta
-						</dt>
-						<dd>
-							Etiam porta sem malesuada magna mollis euismod.
-						</dd>
-						<dt>
-							Felis euismod semper eget lacinia
-						</dt>
-						<dd>
-							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						</dd>
-					</dl><img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-thumbnail">
-				</div>
-			</div> 
-			<address>
-				 <strong>Deutsche Bank</strong> <abbr title="Phone">P:</abbr> 020 7545 8000
-			</address>
+					</table>
+				<img alt="DB Images" src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/1345A/production/_91383987_mediaitem91383986.jpg" style ="width: 100%; height:50%;"></CENTER>
 		</div>
+		<div class="col-md-6" style="width: 40%; height:100%; margin-right: 8%; float:right;">
+			<p>
+					<br/>Are you a growing business in search of support and guidance from an experienced business professional? If so, use our search engine to access a list of quality-assured mentoring organisations in your area that specialise in helping businesses at your stage of development.
+			</p>
+			<br/>
+			<h1>Find Employees Near You</h1>
+			<br/>
+			<div id="out" style="width: 100%; height: 300px"></div>
+				  <script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyA-e6egwormjT4pastHOAgekF59wpRSGPA" type="text/javascript"></script>
+				  <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+				 
+				  <script type="text/javascript">
+					function geoFindMe() {
+					  if (GBrowserIsCompatible()) {
+						var map = new GMap2(document.getElementById("out"));
+						map.addControl(new GLargeMapControl());
+						map.addControl(new GMapTypeControl());
+						map.setCenter(new GLatLng(geoplugin_latitude(), geoplugin_longitude()), 12);
+					  }
+					}
+				  </script>
+				  <script>geoFindMe();</script>
+			</div>
 	</div>
 </div>
 
