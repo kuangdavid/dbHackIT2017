@@ -42,9 +42,9 @@
 				<form class="navbar-form navbar-center" name='form' method='post' action="search.php">
 					<div class="navbar-center">
 						<input "type="text" onkeyup="showUser(this.value)" id ='name' name = "name" class="form-control" value='<?php echo $name?>' style = "width:500px;"/>
-						<select class = "btn btn-default" style="padding:5px;">
-						<option value="Skill" onselect="Skill()" >Skill</option>
-						<option value="Name" onselect="Name()">Name</option>
+						<select id="myselect" class = "btn btn-default" style="padding:5px;" onchange="toggle()">
+							<option value="FirstName">Name</option>
+							<option value="Skill">Skill</option>
 						</select>
 					</div>
 					
@@ -65,7 +65,9 @@
 	
 	
 <script>
-function showUser(str) {
+
+
+function showUser(str){
     if (str == "") {
         document.getElementById("txtHint").innerHTML = "";
         return;
@@ -86,7 +88,6 @@ function showUser(str) {
         xmlhttp.send();
     }
 }
-
 </script>	
 
 
@@ -122,6 +123,9 @@ function showUser(str) {
 	
 	
 </div>
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
 

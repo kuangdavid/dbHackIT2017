@@ -38,10 +38,17 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"sampledb");
-
-
 $sql="SELECT * FROM dbpeople WHERE FirstName like '%".$q."%'";
-
+/*"
+SELECT dbpeople.FirstName,dbpeople.LastName,topic.Name,types.Name
+FROM endorsements
+    JOIN topic
+        ON topic.topicID = endorsements.topicID
+    JOIN dbpeople
+        ON dbpeople.ID = endorsements.dbPeopleID
+	JOIN types
+        ON types.typesID = topic.typesID
+WHERE FirstName like '%".$q."%'";*/
 
 $result = mysqli_query($con,$sql);
 
@@ -55,8 +62,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td><div class='photo' style='background-image:url(http://gd.intranet.db.com/perl/photo?mail=" . $row['email'] . ");'></div>" . $row['FirstName']
 ." ". $row['LastName'] ."</td>";   
-	echo "<td>" .$row['email']."</td>";  
-	echo "<td>" .$row['tag']."</td>";	
+	echo "<td>" .$row['email']."</td>";                                                                                                  
     echo "</tr>";                                                                                                                                         
 }  
 echo "</table>";

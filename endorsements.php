@@ -61,46 +61,55 @@
 		</div>
 	</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4" id="details">
 					 
-					<address>
-						 <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
-					</address>
+
 				</div>
-				<div class="col-md-4">
-					<ul>
-						<li>
-							Lorem ipsum dolor sit amet
-						</li>
-						<li>
-							Consectetur adipiscing elit
-						</li>
-						<li>
-							Integer molestie lorem at massa
-						</li>
-						<li>
-							Facilisis in pretium nisl aliquet
-						</li>
-						<li>
-							Nulla volutpat aliquam velit
-						</li>
-						<li>
-							Faucibus porta lacus fringilla vel
-						</li>
-						<li>
-							Aenean sit amet erat nunc
-						</li>
-						<li>
-							Eget porttitor lorem
-						</li>
-					</ul>
+				
+				<div class="col-md-4" id="endorsements">
+			
 				</div>
-				<div class="col-md-4">
-					<p>
-						Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-					</p>
+				
+				
+				<div class="col-md-4" id="comments">
+		
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+</body>
+
+<script>
+function getInfo(str) {
+    if (str == "") {
+        document.getElementById("details").innerHTML = "";
+		document.getElementById("endorsements").innerHTML = "";
+		document.getElementById("comments").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("details").innerHTML = this.responseText;
+				document.getElementById("endorsements").innerHTML = this.responseText;
+				document.getElementById("comments").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getdetails.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+</script>	
+	
+<script>
+getInfo("Adam");
+<!--<?php echo $name ?>-->
+</script>
+</html>
